@@ -1,0 +1,181 @@
+{
+  "name": "Nicola Petkov",
+  "role": "Video Editor & Post-Production Specialist",
+  "availability": "Available for new projects",
+  "headline": "Cinematic edits that keep people watching.",
+  "intro": "Podcasts, YouTube, short-form, online courses and film. 4 years of client work, 500+ projects every year.",
+  "photo": "assets/img/nicola.webp",
+  "showreel": "",
+  "fiverr": "https://www.fiverr.com/nicolapetkovv",
+  "about": "I'm a freelance video editor with 4 years of professional experience and a wide range of clients — from growing creators to YouTube channels with millions of subscribers. I handle 500+ projects a year, so high volume and tight deadlines don't scare me.\n\nMy strength is cinematic editing and storytelling: finding the moments that matter and shaping them into something people watch until the end. I've also worked on the post-production of festival award-winning films.",
+  "education": {
+    "degree": "Film and Media",
+    "school": "Queen Margaret University, Scotland, UK"
+  },
+  "languages": "Bulgarian, English",
+  "location": "Bulgaria",
+  "featured": {
+    "label": "Biggest project",
+    "title": "Peak 21",
+    "client": "Anti.Prophet",
+    "text": "A paid online course by Anti.Prophet with 9 modules, from mindset and dating to workouts, nutrition, budgeting and business. I edited the course's long-form lessons and short-form videos, and separately edited podcasts and Shorts for his YouTube channel.",
+    "topics": [
+      "Mindset Mastery",
+      "Workouts",
+      "Nutrition",
+      "Budgeting",
+      "Business Fundamentals",
+      "Building Brands for Businesses",
+      "Creator Monetization",
+      "Managing Travel Creator Accounts",
+      "Dating Course"
+    ],
+    "stats": [
+      {
+        "value": "100+",
+        "label": "long-form lessons"
+      },
+      {
+        "value": "250+",
+        "label": "shorts"
+      },
+      {
+        "value": "9",
+        "label": "course modules"
+      }
+    ],
+    "images": [
+      "/assets/uploads/peak21-1.webp",
+      "/assets/uploads/peak21-2.webp",
+      "/assets/uploads/peak21-3.webp",
+      "/assets/uploads/peak21-4.webp"
+    ],
+    "note": "The course is no longer publicly available, so only frames from it are shown here."
+  },
+  "credentials": [
+    {
+      "icon": "course",
+      "title": "Film & Media degree",
+      "text": "Queen Margaret University, Scotland, UK"
+    },
+    {
+      "icon": "clients",
+      "title": "Proven client experience",
+      "text": "4 years with creators, podcasts and brands"
+    },
+    {
+      "icon": "award",
+      "title": "Award-winning films",
+      "text": "Post-production on festival award-winning films"
+    },
+    {
+      "icon": "layers",
+      "title": "Built for volume",
+      "text": "500+ projects every year"
+    }
+  ],
+  "services": [
+    {
+      "icon": "podcast",
+      "title": "Podcasts",
+      "text": "Multi-cam edits, clean audio and pacing that holds attention."
+    },
+    {
+      "icon": "youtube",
+      "title": "YouTube & vlogs",
+      "text": "Story-driven long-form edits built for retention."
+    },
+    {
+      "icon": "shortform",
+      "title": "Short-form & social",
+      "text": "Reels, TikToks and Shorts with strong hooks and clean captions."
+    },
+    {
+      "icon": "film",
+      "title": "Documentaries & film",
+      "text": "Post-production on festival award-winning films."
+    },
+    {
+      "icon": "course",
+      "title": "Online courses",
+      "text": "Clear, structured lessons that are easy to follow."
+    },
+    {
+      "icon": "color",
+      "title": "Color & motion",
+      "text": "Color correction, grading, captions and simple motion graphics."
+    }
+  ],
+  "social": {
+    "headline": "Built for the feed.",
+    "text": "Vertical edits for Reels, TikTok and Shorts, made to stop the scroll and hold attention.",
+    "points": [
+      {
+        "icon": "shortform",
+        "title": "Scroll-stopping hooks",
+        "text": "The first seconds are built to stop the scroll."
+      },
+      {
+        "icon": "captions",
+        "title": "Captions that pop",
+        "text": "Bold, readable captions with key words highlighted."
+      },
+      {
+        "icon": "reframe",
+        "title": "Reframed for 9:16",
+        "text": "Horizontal footage reframed so the subject stays in frame."
+      },
+      {
+        "icon": "music",
+        "title": "Sound & pacing",
+        "text": "Tight cuts, licensed music and sound effects."
+      }
+    ],
+    "frames": [
+      "/assets/uploads/captions-after.webp",
+      "/assets/uploads/motion-after.webp",
+      "/assets/uploads/reframe-after.webp"
+    ],
+    "framesNote": "Sample frames"
+  },
+  "refer": {
+    "button": "Refer me",
+    "title": "Worked with me?",
+    "text": "Share a ready-made card about my work on your Instagram story.",
+    "link": "",
+    "cards": [
+      "My video editor",
+      "Need a video editor?",
+      "Looking for an editor? Here's mine."
+    ]
+  },
+  "process": [
+    {
+      "title": "Brief",
+      "text": "You share the footage, references and goals. I ask what I need before I cut."
+    },
+    {
+      "title": "Edit",
+      "text": "Story first, then pacing, sound, color and captions."
+    },
+    {
+      "title": "Review",
+      "text": "You watch the cut and send notes. I refine it."
+    },
+    {
+      "title": "Delivery",
+      "text": "Final exports in the format and size each platform needs."
+    }
+  ],
+  "contact": {
+    "headline": "Have a project in mind?",
+    "text": "Tell me about your video — podcast, YouTube, short-form or film.",
+    "email": "n.petkkov@gmail.com",
+    "links": [
+      {
+        "label": "Fiverr",
+        "url": "https://www.fiverr.com/nicolapetkovv"
+      }
+    ]
+  }
+}

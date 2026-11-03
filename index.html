@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nicola Petkov — Video Editor</title>
+  <meta name="description" content="Nicola Petkov — video editor and post-production specialist. Podcasts, YouTube, short-form, online courses, film, color grading and motion graphics.">
+  <meta name="theme-color" content="#f5f5f7">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+  <!-- Animated monochrome background -->
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+
+  <header class="nav glass">
+    <a href="#top" class="brand" data-bind="name">Nicola Petkov</a>
+    <nav class="links" id="links">
+      <a href="#work" data-section-link="work">Work</a>
+      <a href="#clients">Clients</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#about">About</a>
+    </nav>
+    <a href="#contact" class="btn dark small">Hire me</a>
+    <button class="menu" id="menu" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero wrap">
+      <div class="hero-text">
+        <p class="pill glass reveal"><i class="dot"></i><span data-bind="availability"></span></p>
+        <h1 class="reveal" style="--d:.08s" data-bind="name">Nicola Petkov</h1>
+        <p class="role reveal" style="--d:.16s" data-bind="role"></p>
+        <p class="headline reveal" style="--d:.24s" data-bind="headline"></p>
+        <p class="intro reveal" style="--d:.32s" data-bind="intro"></p>
+        <div class="actions reveal" style="--d:.4s">
+          <a href="#contact" class="btn dark">Work with me</a>
+          <button class="btn glass" id="reel-btn" hidden>▶&nbsp; Watch showreel</button>
+          <a href="#work" class="btn glass">See my work →</a>
+          <a class="btn glass" data-fiverr target="_blank" rel="noopener" hidden>Hire me on Fiverr ↗</a>
+        </div>
+      </div>
+
+      <div class="hero-photo reveal" style="--d:.2s">
+        <div class="photo-frame glass">
+          <img id="photo" alt="Nicola Petkov" width="960" height="1200">
+        </div>
+        <span class="chip glass c1">Premiere Pro</span>
+        <span class="chip glass c2">Color grading</span>
+        <span class="chip glass c3">Storytelling</span>
+      </div>
+
+      <ul class="stats" id="stats"></ul>
+      <ul class="creds glass reveal" id="creds" hidden></ul>
+    </section>
+
+    <!-- CLIENTS -->
+    <section id="clients" class="section wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">Clients</p>
+        <h2>Creators &amp; brands I've edited for.</h2>
+        <p class="sub">From growing creators to YouTube channels with millions of subscribers.</p>
+        <p class="reach glass" id="reach" hidden><strong></strong><span>combined subscribers across these channels</span></p>
+      </header>
+      <div class="clients" id="client-list"></div>
+      <p class="more-note reveal">And many more…</p>
+    </section>
+
+    <!-- COMPANIES -->
+    <section id="companies" class="section wrap" hidden>
+      <header class="section-head reveal">
+        <p class="eyebrow">Companies</p>
+        <h2 id="companies-headline"></h2>
+        <p class="sub" id="companies-text"></p>
+      </header>
+      <div class="companies" id="company-list"></div>
+      <p class="companies-note" id="companies-note"></p>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="section wrap" hidden>
+      <header class="section-head reveal">
+        <p class="eyebrow">Reviews</p>
+        <h2>Some client reviews.</h2>
+        <p class="sub" id="reviews-sub"></p>
+      </header>
+      <div class="reviews" id="review-list"></div>
+      <div class="refer-cta glass reveal" id="refer-cta" hidden>
+        <div><h3 id="refer-cta-title"></h3><p id="refer-cta-text"></p></div>
+        <button class="btn dark" data-refer></button>
+      </div>
+    </section>
+
+    <!-- WORK (hidden until videos are added in the admin panel) -->
+    <section id="work" class="section wrap" hidden>
+      <header class="section-head reveal">
+        <p class="eyebrow">Selected work</p>
+        <h2>Portfolio</h2>
+      </header>
+      <article class="featured glass reveal" id="featured" hidden></article>
+      <div class="work-filters">
+      <div class="filter-row" id="work-cats-row">
+        <span class="filter-label">Category</span>
+        <div class="filters" id="work-filters" role="tablist"></div>
+      </div>
+      <div class="filter-row" id="work-clients-row">
+        <span class="filter-label">Client</span>
+        <div class="filters" id="work-clients" role="tablist"></div>
+      </div>
+      </div>
+      <div class="projects" id="project-list"></div>
+      <div class="projects shorts" id="shorts-list"></div>
+      <p class="work-empty" id="work-empty" hidden>No videos for this combination yet.</p>
+      <div class="actions center"><button class="btn glass" id="work-more" hidden></button></div>
+    </section>
+
+
+    <!-- SOCIAL MEDIA VIDEOS -->
+    <section id="social" class="section wrap social" hidden>
+      <div class="social-text">
+        <header class="section-head reveal">
+          <p class="eyebrow">Social media videos</p>
+          <h2 id="social-headline"></h2>
+          <p class="sub" id="social-text"></p>
+        </header>
+        <div class="points" id="social-points"></div>
+      </div>
+      <figure class="phone-wrap reveal" style="--d:.15s">
+        <div class="phone glass" id="phone"></div>
+        <span class="chip glass p1">9:16</span>
+        <span class="chip glass p2">Reels · TikTok · Shorts</span>
+        <figcaption id="phone-note"></figcaption>
+      </figure>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">Services</p>
+        <h2>What I edit.</h2>
+      </header>
+      <div class="services" id="service-list"></div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="section wrap" hidden>
+      <header class="section-head reveal">
+        <p class="eyebrow">How I work</p>
+        <h2>From brief to delivery.</h2>
+      </header>
+      <ol class="steps" id="steps"></ol>
+      <div class="actions reveal">
+        <a class="btn dark" data-fiverr target="_blank" rel="noopener" hidden>Hire me on Fiverr ↗</a>
+        <a href="#contact" class="btn glass">Get in touch</a>
+      </div>
+    </section>
+
+    <!-- TOOLKIT -->
+    <section id="toolkit" class="section wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">Toolkit</p>
+        <h2>Adobe workflow. Premium assets.</h2>
+        <p class="sub">Licensed music, sound design, footage and plugins, so every edit is ready to publish.</p>
+      </header>
+      <div class="software" id="software-list"></div>
+      <div class="marquee reveal" aria-label="Subscriptions">
+        <div class="track" id="subs-track"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section wrap about">
+      <div class="reveal">
+        <p class="eyebrow">About</p>
+        <h2>Hi, I'm <span data-bind="firstName">Nicola</span>.</h2>
+        <div class="about-text" id="about-text"></div>
+      </div>
+      <dl class="facts glass reveal" style="--d:.1s">
+        <div><dt>Education</dt><dd><span id="edu-degree"></span><small id="edu-school"></small></dd></div>
+        <div><dt>Languages</dt><dd data-bind="languages"></dd></div>
+        <div><dt>Based in</dt><dd data-bind="location"></dd></div>
+      </dl>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section dark-section contact">
+      <div class="wrap reveal">
+        <h2 id="contact-headline"></h2>
+        <p class="sub" id="contact-text"></p>
+        <div class="actions center" id="contact-links"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> <span data-bind="name"></span></span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <dialog id="player" class="player">
+    <button class="close" aria-label="Close">✕</button>
+    <div class="player-frame" id="player-frame"></div>
+  </dialog>
+
+  <dialog id="refer" class="refer">
+    <div class="refer-panel glass">
+      <button class="close" aria-label="Close">✕</button>
+      <figure class="refer-preview loading"><img id="refer-img" alt="Story card preview"></figure>
+      <div class="refer-body">
+        <p class="eyebrow">Refer me</p>
+        <h2>Share my work.</h2>
+        <p class="sub">Pick a design, then share it to your Instagram story or save it to your phone.</p>
+        <div class="filters refer-designs" id="refer-designs" role="tablist"></div>
+        <div class="actions">
+          <button class="btn dark" id="refer-share" hidden>Share to story</button>
+          <a class="btn glass" id="refer-save">Save image</a>
+          <button class="btn glass" id="refer-copy">Copy link</button>
+        </div>
+        <p class="refer-hint" id="refer-hint"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="main.js"></script>
+</body>
+</html>

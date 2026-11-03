@@ -1,0 +1,16 @@
+{
+  "items": [
+    { "name": "Anti.Prophet", "subscribers": "1.53M", "url": "https://www.youtube.com/@anti.prophet", "logo": "/assets/uploads/avatar-anti-prophet.jpg", "videos": "350+" },
+    { "name": "The Taboo Room With Aaron S", "subscribers": "581K", "url": "https://www.youtube.com/@TheTabooRoomWithAaron", "logo": "/assets/uploads/avatar-taboo-room.jpg" },
+    { "name": "SH Podcast", "subscribers": "87.9K", "url": "https://www.youtube.com/@SHPodcastBulgaria", "logo": "/assets/uploads/avatar-sh-podcast.jpg" },
+    { "name": "Maya Yatanska", "subscribers": "37.2K", "url": "https://www.youtube.com/@mayayatanska", "logo": "/assets/uploads/avatar-maya-yatanska.jpg", "manager": true },
+    { "name": "Gent's Talk Podcast", "subscribers": "28.9K", "url": "https://www.youtube.com/@GentsTalkPodcast", "logo": "/assets/uploads/avatar-gents-talk.jpg" },
+    { "name": "Betinum", "subscribers": "13.2K", "url": "https://www.youtube.com/@Betinum", "logo": "/assets/uploads/avatar-betinum.jpg" },
+    { "name": "Just Saldanha", "subscribers": "4.39K", "url": "https://www.youtube.com/@just_saldanha", "logo": "/assets/uploads/avatar-just-saldanha.jpg", "manager": true },
+    { "name": "Крачка Напред", "subscribers": "3.46K", "url": "https://www.youtube.com/@krachkanapred", "logo": "/assets/uploads/avatar-krachka-napred.jpg", "manager": true },
+    { "name": "Aspire Educational Center", "subscribers": "", "url": "", "logo": "" },
+    { "name": "Springbok Properties", "subscribers": "", "url": "", "logo": "" },
+    { "name": "Airfleet", "subscribers": "", "url": "", "logo": "" },
+    { "name": "James Taylor", "subscribers": "", "url": "", "logo": "" }
+  ]
+}

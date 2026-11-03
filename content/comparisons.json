@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "category": "Color grading",
+      "before": "/assets/uploads/grade-raw.webp",
+      "after": "/assets/uploads/grade-graded.webp",
+      "beforeLabel": "RAW",
+      "afterLabel": "GRADED",
+      "sample": true
+    },
+    {
+      "category": "Captions",
+      "before": "/assets/uploads/captions-before.webp",
+      "after": "/assets/uploads/captions-after.webp",
+      "beforeLabel": "CLEAN",
+      "afterLabel": "CAPTIONS",
+      "sample": true
+    },
+    {
+      "category": "Motion graphics",
+      "before": "/assets/uploads/motion-before.webp",
+      "after": "/assets/uploads/motion-after.webp",
+      "beforeLabel": "CLEAN",
+      "afterLabel": "MOTION",
+      "sample": true
+    },
+    {
+      "category": "VFX / Cleanup",
+      "before": "/assets/uploads/vfx-before.webp",
+      "after": "/assets/uploads/vfx-after.webp",
+      "beforeLabel": "ORIGINAL",
+      "afterLabel": "CLEANED",
+      "sample": true
+    },
+    {
+      "category": "Reframing",
+      "before": "/assets/uploads/reframe-before.webp",
+      "after": "/assets/uploads/reframe-after.webp",
+      "beforeLabel": "16:9",
+      "afterLabel": "9:16",
+      "sample": true
+    }
+  ]
+}

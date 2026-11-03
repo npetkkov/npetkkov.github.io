@@ -1,0 +1,15 @@
+{
+  "software": [
+    { "name": "Premiere Pro", "short": "Pr", "note": "Editing, color, audio" },
+    { "name": "After Effects", "short": "Ae", "note": "Motion graphics, VFX" },
+    { "name": "Photoshop", "short": "Ps", "note": "Image editing" },
+    { "name": "Media Encoder", "short": "Me", "note": "Exports & delivery" }
+  ],
+  "subscriptions": [
+    { "name": "Artlist", "logo": "/assets/logos/artlist.png" },
+    { "name": "Envato", "logo": "/assets/logos/envato.png" },
+    { "name": "Epidemic Sound", "logo": "/assets/logos/epidemicsound.png" },
+    { "name": "Mister Horse", "logo": "/assets/logos/misterhorse.png" },
+    { "name": "Captions.ai", "logo": "/assets/logos/captions.png" }
+  ]
+}

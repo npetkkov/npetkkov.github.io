@@ -1,0 +1,43 @@
+{
+  "headline": "These companies trusted me.",
+  "text": "Established businesses that hired me to edit their videos.",
+  "note": "Figures as published by each company on its own website.",
+  "items": [
+    {
+      "name": "Springbok Properties",
+      "logo": "/assets/uploads/logo-springbok.jpg",
+      "url": "https://www.springbokproperties.co.uk/",
+      "about": "Cash home-buying company in the UK, buying houses across England, Scotland and Wales.",
+      "location": "Manchester, UK",
+      "stats": [
+        { "value": "19,000+", "label": "homeowners sold to them" },
+        { "value": "11,700+", "label": "customer reviews" },
+        { "value": "2012", "label": "founded" }
+      ]
+    },
+    {
+      "name": "Airfleet",
+      "logo": "/assets/uploads/logo-airfleet.jpg",
+      "url": "https://www.airfleet.co/",
+      "about": "Website agency for B2B tech companies, building sites for SaaS and cybersecurity brands.",
+      "location": "Palo Alto, USA",
+      "stats": [
+        { "value": "$1.6B+", "label": "revenue generated for clients" },
+        { "value": "45+", "label": "experts worldwide" },
+        { "value": "60+", "label": "platform clients" }
+      ]
+    },
+    {
+      "name": "Betinum",
+      "logo": "/assets/uploads/avatar-betinum.jpg",
+      "url": "https://betinum.com/",
+      "about": "Football analysis and betting tips platform from Bulgaria, with members in Bulgaria and abroad.",
+      "location": "Bulgaria",
+      "stats": [
+        { "value": "187K+", "label": "Instagram followers" },
+        { "value": "12,000+", "label": "clients" },
+        { "value": "2015", "label": "online since" }
+      ]
+    }
+  ]
+}

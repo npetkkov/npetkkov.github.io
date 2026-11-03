@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "value": 4, "suffix": "+", "label": "Years of client work" },
+    { "value": 500, "suffix": "+", "label": "Projects every year" },
+    { "value": 20, "suffix": "M+", "label": "Views on videos I've edited" },
+    { "value": 200, "suffix": "K+", "label": "Likes on videos I've edited" }
+  ]
+}

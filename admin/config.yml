@@ -1,0 +1,253 @@
+# Admin panel config (Sveltia CMS).
+backend:
+  name: github
+  repo: npetkkov/npetkkov.github.io
+  branch: main
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: content
+    label: Site content
+    editor:
+      preview: false
+    files:
+      - name: projects
+        label: Portfolio videos
+        file: content/projects.json
+        fields:
+          - name: items
+            label: Videos
+            label_singular: Video
+            widget: list
+            summary: "{{fields.title}} · {{fields.category}}"
+            fields:
+              - { name: title, label: Title, widget: string }
+              - name: video
+                label: Video link
+                widget: string
+                hint: "YouTube (also Shorts) or Vimeo link. The video must be Unlisted or Public on YouTube. Private videos won't play for visitors."
+              - { name: vertical, label: Vertical video (9:16), widget: boolean, default: false, required: false, hint: Shorts links are detected automatically. Turn on for vertical videos with a normal watch link. }
+              - name: category
+                label: Category
+                widget: select
+                options: [YouTube, Vlog, Finance, Podcast, Short-form, Online course, Documentary, Film, Commercial, Other]
+              - { name: client, label: Client, widget: string, required: false, hint: Write the name exactly as in Clients so the client card links to these videos. }
+              - { name: views, label: Views (e.g. 1.8M), widget: string, required: false }
+              - name: thumbnail
+                label: Custom thumbnail
+                widget: image
+                required: false
+                hint: Optional. YouTube thumbnails are loaded automatically.
+
+      - name: clients
+        label: Clients
+        file: content/clients.json
+        fields:
+          - name: items
+            label: Clients
+            label_singular: Client
+            widget: list
+            summary: "{{fields.name}} · {{fields.subscribers}}"
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: subscribers, label: Subscribers (e.g. 1.53M), widget: string, required: false, hint: Leave empty to hide. }
+              - { name: url, label: Channel link, widget: string, required: false }
+              - { name: logo, label: Logo / avatar, widget: image, required: false, hint: Square image. Initials are shown if empty. }
+              - { name: videos, label: Videos edited (e.g. 350+), widget: string, required: false, hint: Leave empty to count the videos in Portfolio automatically. Use it when most of the work is no longer online. }
+              - { name: manager, label: I also manage this channel, widget: boolean, default: false, required: false, hint: Adds a "Channel manager" tag to the card. }
+
+      - name: companies
+        label: Companies
+        file: content/companies.json
+        fields:
+          - { name: headline, label: Headline, widget: string }
+          - { name: text, label: Text under the headline, widget: string, required: false }
+          - { name: note, label: Note under the cards, widget: string, required: false, hint: Say where the numbers come from. }
+          - name: items
+            label: Companies
+            label_singular: Company
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: logo, label: Logo, widget: image, required: false, hint: Square image. Shown in black and white. }
+              - { name: url, label: Website, widget: string, required: false }
+              - { name: about, label: What they do, widget: text }
+              - { name: location, label: Based in, widget: string, required: false }
+              - name: stats
+                label: Facts about the company
+                widget: list
+                summary: "{{fields.value}} {{fields.label}}"
+                hint: Use numbers the company publishes itself.
+                fields:
+                  - { name: value, label: Number (e.g. 19,000+), widget: string }
+                  - { name: label, label: Label, widget: string }
+
+      - name: reviews
+        label: Client reviews
+        file: content/reviews.json
+        fields:
+          - { name: source, label: Where the reviews are from, widget: string, required: false, hint: Shown on every card, e.g. YouTube Jobs. }
+          - name: items
+            label: Reviews
+            label_singular: Review
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Client, widget: string, hint: Write the name exactly as in Clients to show their avatar and subscribers. }
+              - { name: text, label: Review (word for word), widget: text }
+              - { name: translation, label: English translation, widget: string, required: false, hint: Only for reviews that are not in English. }
+
+      - name: stats
+        label: Stats
+        file: content/stats.json
+        fields:
+          - name: items
+            label: Stats
+            label_singular: Stat
+            widget: list
+            summary: "{{fields.prefix}}{{fields.value}}{{fields.suffix}} · {{fields.label}}"
+            fields:
+              - { name: prefix, label: Prefix, widget: string, required: false }
+              - { name: value, label: Number, widget: number, value_type: float }
+              - { name: suffix, label: Suffix (e.g. +, M+, K+), widget: string, required: false }
+              - { name: label, label: Label, widget: string }
+
+      - name: tools
+        label: Software & subscriptions
+        file: content/tools.json
+        fields:
+          - name: software
+            label: Software
+            label_singular: App
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: short, label: Icon letters (e.g. Pr), widget: string }
+              - { name: note, label: Used for, widget: string, required: false }
+          - name: subscriptions
+            label: Subscriptions
+            label_singular: Subscription
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: logo, label: Logo, widget: image, required: false, hint: Square icon. Shown in black and white automatically. }
+
+      - name: site
+        label: Texts, photo & contact
+        file: content/site.json
+        fields:
+          - { name: name, label: Name, widget: string }
+          - { name: role, label: Title, widget: string }
+          - { name: availability, label: Availability badge, widget: string }
+          - { name: headline, label: Headline, widget: string }
+          - { name: intro, label: Intro, widget: text }
+          - { name: photo, label: Photo, widget: image }
+          - { name: showreel, label: Showreel link, widget: string, required: false, hint: YouTube or Vimeo link. Adds a "Watch showreel" button. }
+          - { name: fiverr, label: Fiverr link, widget: string, required: false, hint: Adds "Hire me on Fiverr" buttons. }
+          - { name: about, label: About text, widget: text, hint: Leave an empty line between paragraphs. }
+          - name: education
+            label: Education
+            widget: object
+            fields:
+              - { name: degree, label: Degree, widget: string }
+              - { name: school, label: School, widget: string }
+          - { name: languages, label: Languages, widget: string }
+          - { name: location, label: Based in, widget: string }
+          - name: credentials
+            label: Credentials strip (under the stats)
+            label_singular: Credential
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: icon, label: Icon, widget: select, options: [course, clients, award, layers, film, camera, youtube, podcast] }
+              - { name: title, label: Title, widget: string }
+              - { name: text, label: Text, widget: string }
+          - name: services
+            label: Services
+            label_singular: Service
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - name: icon
+                label: Icon
+                widget: select
+                options: [podcast, youtube, shortform, film, course, color, camera, captions, motion, vfx, music, audio, reframe]
+              - { name: title, label: Title, widget: string }
+              - { name: text, label: Text, widget: text }
+          - name: social
+            label: Social media section
+            widget: object
+            fields:
+              - { name: headline, label: Headline, widget: string }
+              - { name: text, label: Text, widget: text }
+              - name: points
+                label: Points
+                label_singular: Point
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: icon, label: Icon, widget: select, options: [shortform, captions, reframe, music, motion, color, audio, youtube] }
+                  - { name: title, label: Title, widget: string }
+                  - { name: text, label: Text, widget: string }
+              - { name: frames, label: Phone frames (vertical images), widget: image, multiple: true, required: false }
+              - { name: framesNote, label: Note under the phone, widget: string, required: false, hint: e.g. "Sample frames". Leave empty for your own work. }
+          - name: featured
+            label: Featured project (top of Portfolio)
+            widget: object
+            required: false
+            hint: For a big project that can't be embedded, e.g. a course that is no longer online. Leave the name empty to hide it.
+            fields:
+              - { name: label, label: Small label, widget: string, required: false }
+              - { name: title, label: Project name, widget: string, required: false }
+              - { name: client, label: Client, widget: string, required: false, hint: Write the name exactly as in Clients to show their avatar. }
+              - { name: text, label: Description, widget: text, required: false }
+              - { name: topics, label: Topics, widget: list, required: false }
+              - name: stats
+                label: Numbers
+                widget: list
+                required: false
+                summary: "{{fields.value}} {{fields.label}}"
+                fields:
+                  - { name: value, label: Number (e.g. 30+), widget: string }
+                  - { name: label, label: Label, widget: string }
+              - { name: images, label: Frames, widget: image, multiple: true, required: false }
+              - { name: note, label: Note under the card, widget: string, required: false }
+          - name: refer
+            label: Refer me (Instagram story card)
+            widget: object
+            required: false
+            hint: Clients get a ready-made story image about your work. Leave the button text empty to hide it.
+            fields:
+              - { name: button, label: Button text, widget: string, required: false }
+              - { name: title, label: Title next to the button, widget: string, required: false }
+              - { name: text, label: Text next to the button, widget: string, required: false }
+              - { name: link, label: Link on the card, widget: string, required: false, hint: Leave empty to use the site's own address once it's online (your Fiverr link until then). }
+              - { name: cards, label: Card headlines (Photo, Stats, Clients designs), widget: list, required: false }
+          - name: process
+            label: How I work (steps)
+            label_singular: Step
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: text, label: Text, widget: text }
+          - name: contact
+            label: Contact
+            widget: object
+            fields:
+              - { name: headline, label: Headline, widget: string }
+              - { name: text, label: Text, widget: text }
+              - { name: email, label: Email, widget: string, required: false }
+              - name: links
+                label: Links
+                label_singular: Link
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - { name: label, label: Label, widget: string }
+                  - { name: url, label: URL, widget: string }
