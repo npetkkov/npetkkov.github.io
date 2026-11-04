@@ -50,10 +50,12 @@ function renderSite(site) {
   $("#edu-school").textContent = site.education?.school || "";
   $("#about-text").innerHTML = (site.about || "").split(/\n\s*\n/).map(p => `<p>${esc(p)}</p>`).join("");
 
-  if (site.showreel && videoInfo(site.showreel)) {
+  const reel = videoInfo(site.showreel);
+  if (reel) {
     const btn = $("#reel-btn");
     btn.hidden = false;
-    btn.addEventListener("click", () => openPlayer(site.showreel));
+    if (reel.file) renderShowreel(reel.file, site.showreelPoster, btn);
+    else btn.addEventListener("click", () => openPlayer(site.showreel));
   }
 
   $("#service-list").innerHTML = (site.services || []).map((s, i) => `
@@ -258,6 +260,23 @@ function renderReviews(reviews, clients) {
         </figcaption>
       </figure>`;
   }).join("");
+}
+
+// A showreel file sits on the page itself; the hero button scrolls to it and starts it.
+function renderShowreel(file, poster, btn) {
+  const video = $("#reel-video"), play = $("#reel-play");
+  if (poster) video.poster = src(poster);
+  video.src = file;
+  $("#showreel").hidden = false;
+  document.querySelectorAll('[data-section-link="showreel"]').forEach(a => (a.hidden = false));
+  play.addEventListener("click", () => video.play());
+  video.addEventListener("play", () => (play.hidden = true));
+  video.addEventListener("pause", () => (play.hidden = video.seeking));
+  video.addEventListener("ended", () => (play.hidden = false));
+  btn.addEventListener("click", () => {
+    $("#reel").scrollIntoView();
+    video.play();
+  });
 }
 
 function videoInfo(url = "") {

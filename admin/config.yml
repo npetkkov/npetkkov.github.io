@@ -147,7 +147,8 @@ collections:
           - { name: headline, label: Headline, widget: string }
           - { name: intro, label: Intro, widget: text }
           - { name: photo, label: Photo, widget: image }
-          - { name: showreel, label: Showreel link, widget: string, required: false, hint: YouTube or Vimeo link, or a path to an uploaded video such as assets/uploads/showreel.mp4. Adds a "Watch showreel" button. }
+          - { name: showreel, label: Showreel link, widget: string, required: false, hint: YouTube or Vimeo link, or a path to an uploaded video such as assets/uploads/showreel.mp4. A file appears on the page in its own section; a link opens from the "Watch showreel" button. }
+          - { name: showreelPoster, label: Showreel preview image, widget: image, required: false, hint: Shown before an uploaded showreel video starts. }
           - { name: fiverr, label: Fiverr link, widget: string, required: false, hint: Adds "Hire me on Fiverr" buttons. }
           - { name: about, label: About text, widget: text, hint: Leave an empty line between paragraphs. }
           - name: education

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
   <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
@@ -24,6 +24,7 @@
   <header class="nav glass">
     <a href="#top" class="brand" data-bind="name">Nicola Petkov</a>
     <nav class="links" id="links">
+      <a href="#reel" data-section-link="showreel" hidden>Showreel</a>
       <a href="#work" data-section-link="work">Work</a>
       <a href="#clients">Clients</a>
       <a href="#reviews">Reviews</a>
@@ -63,6 +64,18 @@
 
       <ul class="stats" id="stats"></ul>
       <ul class="creds glass reveal" id="creds" hidden></ul>
+    </section>
+
+    <!-- SHOWREEL -->
+    <section id="showreel" class="section wrap" hidden>
+      <header class="section-head reveal">
+        <p class="eyebrow">Showreel</p>
+        <h2>See how I edit.</h2>
+      </header>
+      <div class="reel glass reveal" id="reel">
+        <video id="reel-video" controls playsinline preload="metadata"></video>
+        <button class="play reel-play" id="reel-play" aria-label="Play showreel">▶</button>
+      </div>
     </section>
 
     <!-- CLIENTS -->
@@ -233,6 +246,6 @@
     </div>
   </dialog>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=2"></script>
 </body>
 </html>

@@ -380,6 +380,12 @@ button.client { text-align: left; width: 100%; }
 
 .footer { width: min(var(--max), 100% - 32px); margin: 0 auto; padding: 2.5rem 0; display: flex; justify-content: space-between; color: var(--ink-3); font-size: .88rem; }
 
+/* ---------- Showreel ---------- */
+.reel { position: relative; width: min(100%, calc((100vh - 130px) * 5 / 3)); margin-inline: auto; padding: 8px; border-radius: 24px; }
+.reel video { display: block; width: 100%; aspect-ratio: 5 / 3; border-radius: 18px; background: #111; }
+.reel-play { width: 84px; height: 84px; font-size: 1.5rem; }
+.reel-play:hover { transform: scale(1.1); background: rgba(255, 255, 255, .4); }
+
 /* ---------- Video player ---------- */
 .player { border: 0; padding: 0; background: transparent; width: min(1100px, 92vw); max-width: none; max-height: 90vh; margin: auto; overflow: visible; }
 .player::backdrop { background: rgba(0, 0, 0, .7); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
