@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
   <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
@@ -68,9 +68,18 @@
 
     <!-- SHOWREEL -->
     <section id="showreel" class="showreel" aria-label="Showreel" hidden>
-      <div class="reel glass reveal" id="reel">
-        <video id="reel-video" controls playsinline preload="metadata"></video>
-        <button class="play reel-play" id="reel-play" aria-label="Play showreel">▶</button>
+      <div class="reel reveal" id="reel">
+        <div class="reel-window">
+          <div class="reel-bar" aria-hidden="true"><i></i><i></i><i></i><span>Showreel</span></div>
+          <div class="reel-screen">
+            <video id="reel-video" controls playsinline preload="metadata"></video>
+            <button class="play reel-play" id="reel-play" aria-label="Play showreel">▶</button>
+          </div>
+        </div>
+        <span class="chip glass r1">Captions</span>
+        <span class="chip glass r2">Color correction</span>
+        <span class="chip glass r3">VFX</span>
+        <span class="chip glass r4">Audio cleanup</span>
       </div>
     </section>
 
