@@ -386,6 +386,7 @@ button.client { text-align: left; width: 100%; }
 .reel video { display: block; width: 100%; aspect-ratio: 5 / 3; border-radius: 18px; background: #111; }
 .reel-play { width: 84px; height: 84px; font-size: 1.5rem; }
 .reel-play:hover { transform: scale(1.1); background: rgba(255, 255, 255, .4); }
+@media (max-width: 700px) { .reel-play { width: 54px; height: 54px; font-size: 1rem; } }
 
 /* ---------- Video player ---------- */
 .player { border: 0; padding: 0; background: transparent; width: min(1100px, 92vw); max-width: none; max-height: 90vh; margin: auto; overflow: visible; }
