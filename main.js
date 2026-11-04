@@ -261,6 +261,8 @@ function renderReviews(reviews, clients) {
 }
 
 function videoInfo(url = "") {
+  // A video file hosted with the site (e.g. the showreel) plays in a native <video> player.
+  if (/\.(mp4|webm)(\?.*)?$/i.test(url)) return { file: src(url), thumb: "", vertical: false };
   const yt = url.match(/(?:youtu\.be\/|[?&]v=|shorts\/|embed\/|live\/)([\w-]{11})/);
   if (yt) return {
     embed: `https://www.youtube-nocookie.com/embed/${yt[1]}?autoplay=1&rel=0&modestbranding=1`,
@@ -395,7 +397,16 @@ function openPlayer(url, vertical) {
   if (!v) return;
   const frame = $("#player-frame");
   frame.classList.toggle("vertical", vertical ?? v.vertical);
-  frame.innerHTML = `<iframe src="${esc(v.embed)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+  frame.classList.toggle("file", !!v.file);
+  frame.style.aspectRatio = "";
+  if (v.file) {
+    frame.innerHTML = `<video src="${esc(v.file)}" controls autoplay playsinline></video>`;
+    const video = frame.firstElementChild;
+    // Fit the frame to the clip so non-16:9 files get no black bars.
+    video.addEventListener("loadedmetadata", () => (frame.style.aspectRatio = `${video.videoWidth} / ${video.videoHeight}`));
+  } else {
+    frame.innerHTML = `<iframe src="${esc(v.embed)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+  }
   $("#player").showModal();
 }
 

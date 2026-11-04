@@ -385,7 +385,9 @@ button.client { text-align: left; width: 100%; }
 .player::backdrop { background: rgba(0, 0, 0, .7); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
 .player-frame { aspect-ratio: 16 / 9; border-radius: 22px; overflow: hidden; background: #000; box-shadow: 0 30px 80px rgba(0, 0, 0, .5); }
 .player-frame.vertical { aspect-ratio: 9 / 16; height: min(84vh, 760px); margin: 0 auto; }
+.player-frame.file { max-height: 84vh; }
 .player-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.player-frame video { width: 100%; height: 100%; display: block; object-fit: contain; background: #000; }
 .player .close { position: absolute; top: -52px; right: 0; width: 40px; height: 40px; border-radius: 50%; color: #fff; background: rgba(255, 255, 255, .15); border: 1px solid rgba(255, 255, 255, .3); }
 
 /* ---------- Refer me ---------- */

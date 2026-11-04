@@ -147,7 +147,7 @@ collections:
           - { name: headline, label: Headline, widget: string }
           - { name: intro, label: Intro, widget: text }
           - { name: photo, label: Photo, widget: image }
-          - { name: showreel, label: Showreel link, widget: string, required: false, hint: YouTube or Vimeo link. Adds a "Watch showreel" button. }
+          - { name: showreel, label: Showreel link, widget: string, required: false, hint: YouTube or Vimeo link, or a path to an uploaded video such as assets/uploads/showreel.mp4. Adds a "Watch showreel" button. }
           - { name: fiverr, label: Fiverr link, widget: string, required: false, hint: Adds "Hire me on Fiverr" buttons. }
           - { name: about, label: About text, widget: text, hint: Leave an empty line between paragraphs. }
           - name: education
