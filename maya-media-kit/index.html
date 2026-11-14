@@ -193,11 +193,21 @@ a.vrow:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; bo
   .pass-stub { width: 44px; }
 }
 
+
 @media print {
   @page { size: 1120px 1584px; margin: 0; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  section, .region, .big, .ticket, .videos, .person, .route-card, .why > div { break-inside: avoid; }
+  .region, .big, .ticket, .person, .route-card, .why > div, .vrow, .aud > div { break-inside: avoid; }
+  .sec-head { break-after: avoid; }
   .chip-btn { transform: none !important; }
+  main.band { padding-block: 40px 40px; }
+  main .inner { gap: 44px; }
+  .hero .inner { grid-template-columns: 1.2fr 1fr !important; }
+  .hero .pass { align-self: end; margin-top: 140px; }
+  .hero-photo { top: 0 !important; bottom: auto !important; left: 50% !important; right: auto !important; transform: translateX(-38%) !important; height: 100% !important; opacity: .3 !important; }
+  .reach, .why { grid-template-columns: repeat(3, 1fr) !important; }
+  .regions, .aud { grid-template-columns: repeat(4, 1fr) !important; }
+  .tickets, .contacts { grid-template-columns: repeat(2, 1fr) !important; }
 }
 </style>
 </head>
