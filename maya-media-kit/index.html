@@ -7,400 +7,217 @@
 <meta name="description" content="Partnership media kit for Maya Yatanska: travel and personal finance vlogs.">
 <title>Maya Yatanska Media Kit</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,600;100,800;125,800;125,900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
 <style>
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; }
 img { max-width: 100%; }
-/* Layout: dark "departures" hero with a boarding-pass stat card, then a light page of route, reach, proof and tickets */
+/* Layout: one plain editorial column, photos from the channel carry the page */
 :root {
-  --bg: #f1f4f6;
-  --paper: #ffffff;
-  --ink: #12202b;
-  --muted: #5b6c79;
-  --line: #d9e1e7;
-  --accent: #e0643a;
-  --accent-soft: #fbe6dc;
-  --sea: #1d7491;
-  --sea-soft: #dcedf3;
-  --hero: #0f1c26;
-  --hero-ink: #f3f6f8;
-  --hero-muted: #9fb2bf;
-  --hero-line: #2a3c4a;
-  --todo-bg: #fff3ea;
-  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --bg: #ffffff;
+  --ink: #15181c;
+  --muted: #646b75;
+  --line: #e4e7eb;
+  --soft: #f4f5f7;
+  --accent: #0b6e78;
+  --head: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
   --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0c151c; --paper: #142230; --ink: #e8eef2; --muted: #9db0bd; --line: #26384a;
-    --accent: #f2875f; --accent-soft: #3a2419; --sea: #5ab6d4; --sea-soft: #16323f;
-    --hero: #08111a; --hero-ink: #f3f6f8; --hero-muted: #9fb2bf; --hero-line: #22323f;
-    --todo-bg: #33231a; color-scheme: dark;
-  }
+  :root:not([data-theme="light"]) { --bg: #101215; --ink: #eceef1; --muted: #9aa2ad; --line: #262a30; --soft: #181b20; --accent: #5cc3cc; color-scheme: dark; }
 }
-:root[data-theme="dark"] {
-  --bg: #0c151c; --paper: #142230; --ink: #e8eef2; --muted: #9db0bd; --line: #26384a;
-  --accent: #f2875f; --accent-soft: #3a2419; --sea: #5ab6d4; --sea-soft: #16323f;
-  --hero: #08111a; --hero-ink: #f3f6f8; --hero-muted: #9fb2bf; --hero-line: #22323f;
-  --todo-bg: #33231a; color-scheme: dark;
-}
+:root[data-theme="dark"] { --bg: #101215; --ink: #eceef1; --muted: #9aa2ad; --line: #262a30; --soft: #181b20; --accent: #5cc3cc; color-scheme: dark; }
+
 * { box-sizing: border-box; }
-body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.55; }
-.band { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-.inner { max-width: 1040px; margin: 0 auto; }
-h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; }
-p { margin: 0; }
-.label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-a { color: var(--sea); }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-/* Hero */
-.hero { background: var(--hero); color: var(--hero-ink); padding-block: 48px 56px; position: relative; overflow: hidden; }
-.hero::before {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(60% 80% at 100% 0%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%),
-              radial-gradient(50% 70% at 0% 100%, color-mix(in srgb, var(--sea) 28%, transparent), transparent 70%);
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 72px;
 }
-.hero .inner { position: relative; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
-.hero .label { color: var(--hero-muted); }
-.hero h1 { font-size: clamp(2.6rem, 7.5vw, 4.8rem); font-weight: 900; font-stretch: 125%; line-height: 0.95; letter-spacing: -0.02em; margin-top: 14px; }
-.hero h1 span { color: var(--accent); }
-.hero .lead { color: var(--hero-muted); font-size: 1.1rem; max-width: 46ch; margin-top: 18px; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-.chip { font-family: var(--mono); font-size: 0.75rem; padding: 6px 10px; border: 1px solid var(--hero-line); border-radius: 999px; color: var(--hero-ink); }
+.page { max-width: 920px; margin: 0 auto; display: grid; gap: 56px; }
+h1, h2, h3 { font-family: var(--head); margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.2rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; }
+h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-size: 1rem; font-weight: 500; line-height: 1.35; }
+p { margin: 0; max-width: 64ch; }
+a { color: var(--accent); }
+.muted { color: var(--muted); }
+.small { font-size: .85rem; }
+section { display: grid; gap: 20px; }
 
-/* Boarding pass */
-.pass { background: var(--paper); color: var(--ink); border-radius: 16px; display: grid; grid-template-columns: 1fr auto; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); min-width: 0; }
-.pass-main { padding: 22px 22px 20px; display: grid; gap: 16px; min-width: 0; }
-.pass-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
-.pass-head b { font-family: var(--display); font-stretch: 125%; font-weight: 800; letter-spacing: .04em; font-size: .9rem; }
-.pass-route { display: flex; align-items: center; gap: 10px; }
-.pass-route .code { font-family: var(--mono); font-weight: 700; font-size: 1.9rem; line-height: 1; }
-.pass-route .line { flex: 1; height: 2px; background: repeating-linear-gradient(90deg, var(--muted) 0 6px, transparent 6px 11px); position: relative; }
-.pass-route .line::after { content: "✈"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -55%); background: var(--paper); padding: 0 6px; color: var(--accent); font-size: 1rem; }
-.pass-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 12px; }
-.pass-grid div { display: grid; gap: 2px; min-width: 0; }
-.pass-grid .v { font-family: var(--display); font-weight: 800; font-size: 1.45rem; font-variant-numeric: tabular-nums; line-height: 1.1; }
-.pass-stub { width: 64px; border-left: 2px dashed var(--line); background: var(--accent-soft); display: grid; place-items: center; position: relative; }
-.pass-stub::before, .pass-stub::after { content: ""; position: absolute; left: -10px; width: 18px; height: 18px; border-radius: 50%; background: var(--hero); }
-.pass-stub::before { top: -9px; } .pass-stub::after { bottom: -9px; }
-.pass-stub span { writing-mode: vertical-rl; transform: rotate(180deg); font-family: var(--mono); font-weight: 700; letter-spacing: .2em; font-size: .72rem; color: var(--accent); }
+header { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; }
+.avatar { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; }
+header .sub { font-size: 1.1rem; color: var(--muted); margin-top: 8px; }
+.handles { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 12px; font-size: .95rem; }
 
-/* Sections */
-main.band { padding-block: 48px 64px; }
-main .inner { display: grid; gap: 56px; }
-section { display: grid; gap: 18px; }
-.sec-head { display: grid; gap: 6px; }
-.sec-head h2 { font-size: clamp(1.4rem, 3.2vw, 1.9rem); font-weight: 800; font-stretch: 112%; letter-spacing: -0.01em; }
-.sec-head p { color: var(--muted); max-width: 62ch; }
+.photos { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; }
+.photos img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block; }
+.photos img:first-child { grid-row: 1 / 3; aspect-ratio: 16 / 9; }
 
-/* Route map */
-.route-card { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 22px 8px 14px; overflow-x: auto; }
-.route-card svg { display: block; min-width: 720px; width: 100%; height: auto; }
-.route-card text { font-family: var(--mono); }
-.regions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-.region { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 18px 18px 14px; display: grid; gap: 10px; align-content: start; min-width: 0; }
-.region-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; border-bottom: 2px solid var(--sea); padding-bottom: 8px; }
-.region-head h3 { font-size: 1rem; font-weight: 800; }
-.region-head .count { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: 1.5rem; color: var(--sea); line-height: 1; }
-.region ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.region li { display: grid; gap: 1px; min-width: 0; }
-.region li b { font-weight: 600; }
-.region li span { font-size: .8rem; color: var(--muted); }
-@media (max-width: 960px) { .regions { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .regions { grid-template-columns: 1fr; } }
+.numbers { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.numbers div { padding: 20px 16px 20px 0; min-width: 0; }
+.numbers div + div { padding-left: 16px; border-left: 1px solid var(--line); }
+.numbers b { display: block; font-family: var(--head); font-size: 2rem; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.numbers span { font-size: .9rem; color: var(--muted); }
 
-/* Reach */
-.reach { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.big { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: grid; gap: 4px; min-width: 0; }
-.big .v { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(2.2rem, 5vw, 3rem); line-height: 1; font-variant-numeric: tabular-nums; }
-.big.lead-stat { background: var(--sea); border-color: var(--sea); color: #fff; }
-.big.lead-stat .label { color: rgba(255,255,255,.75); }
-.big p { color: var(--muted); font-size: .9rem; }
-.big.lead-stat p { color: rgba(255,255,255,.85); }
+.about { display: grid; gap: 14px; }
 
-/* Why */
-.why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.why div { border-top: 3px solid var(--accent); padding-top: 14px; display: grid; gap: 6px; min-width: 0; }
-.why h3 { font-size: 1.1rem; font-weight: 800; }
-.why p { color: var(--muted); font-size: .93rem; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; border-top: 1px solid var(--line); }
+.facts div { padding: 14px 16px 14px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.facts dt { font-size: .85rem; color: var(--muted); }
+.facts dd { margin: 2px 0 0; font-weight: 600; }
 
-/* Top videos */
-.videos { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 10px 22px; }
-.vrow { display: grid; grid-template-columns: minmax(0, 1fr) 160px 52px; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); }
-.vrow:last-child { border-bottom: 0; }
-a.vrow { color: inherit; text-decoration: none; }
-a.vrow:hover b { color: var(--sea); }
-a.vrow:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
-.vrow .t { min-width: 0; }
-.vrow .t b { font-weight: 600; display: block; }
-.vrow .t small { color: var(--muted); font-family: var(--mono); font-size: .72rem; }
-.bar { height: 8px; background: var(--sea-soft); border-radius: 4px; overflow: hidden; }
-.bar i { display: block; height: 100%; background: var(--sea); border-radius: 4px; }
-.vrow .n { font-family: var(--mono); font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
-.note { font-size: .8rem; color: var(--muted); }
+.vids { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px 16px; }
+.vid { display: grid; gap: 8px; align-content: start; color: inherit; text-decoration: none; min-width: 0; }
+.vid img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; display: block; background: var(--soft); }
+.vid:hover h3 { color: var(--accent); }
+.vid .meta { font-size: .85rem; color: var(--muted); }
+.vid:focus-visible, .top a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
 
-/* Audience */
-.aud { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-.aud div { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; gap: 6px; min-width: 0; }
-.aud b { font-family: var(--display); font-size: 1.05rem; }
-.todo { background: var(--todo-bg); border: 1px dashed var(--accent); border-radius: 6px; padding: 1px 6px; font-family: var(--mono); font-size: .8rem; color: var(--accent); justify-self: start; }
+.top { display: grid; gap: 14px; }
+.top a { display: grid; grid-template-columns: 160px 1fr auto; gap: 16px; align-items: center; color: inherit; text-decoration: none; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.top a:last-child { border-bottom: 0; }
+.top img { width: 160px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; display: block; background: var(--soft); }
+.top b { font-family: var(--head); font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.top a:hover h3 { color: var(--accent); }
 
-/* Packages as tickets */
-.tickets { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-.ticket { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; display: grid; grid-template-columns: 1fr auto; overflow: hidden; min-width: 0; }
-.ticket .body { padding: 18px 20px; display: grid; gap: 6px; min-width: 0; }
-.ticket h3 { font-size: 1.1rem; font-weight: 800; }
-.ticket p { color: var(--muted); font-size: .92rem; }
-.ticket .stub { border-left: 2px dashed var(--line); padding: 18px 14px; display: grid; align-content: center; justify-items: center; gap: 2px; min-width: 86px; background: var(--sea-soft); }
-.ticket .stub b { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: 1.3rem; color: var(--sea); line-height: 1; }
-.ticket .stub span { font-family: var(--mono); font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-align: center; }
-.terms { background: var(--accent-soft); border-radius: 12px; padding: 14px 18px; font-size: .95rem; }
+.countries { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 32px; }
+.countries p { font-size: .95rem; }
+.countries strong { display: block; font-family: var(--head); font-weight: 700; margin-bottom: 2px; }
 
-/* Contact */
-.contacts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-.person { background: var(--hero); color: var(--hero-ink); border-radius: 16px; padding: 22px; display: grid; gap: 10px; min-width: 0; }
-.person .label { color: var(--hero-muted); }
-.person h3 { font-size: 1.4rem; font-weight: 800; font-stretch: 112%; }
-.person .line { display: flex; flex-wrap: wrap; gap: 4px 16px; font-family: var(--mono); font-size: .9rem; }
-.person .line span { user-select: all; overflow-wrap: anywhere; }
+.formats { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.formats li { display: grid; grid-template-columns: 200px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.formats li strong { font-weight: 600; }
 
-@media (max-width: 820px) {
-  .hero .inner { grid-template-columns: 1fr; }
-  .reach, .why { grid-template-columns: 1fr; }
-  .aud { grid-template-columns: repeat(2, 1fr); }
-  .tickets, .contacts { grid-template-columns: 1fr; }
+.contact { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; background: var(--soft); border-radius: 10px; padding: 24px; }
+.contact div { display: grid; gap: 2px; min-width: 0; }
+.contact strong { font-family: var(--head); font-size: 1.1rem; }
+.contact span { overflow-wrap: anywhere; }
+
+@media (max-width: 760px) {
+  .numbers { grid-template-columns: repeat(2, 1fr); }
+  .numbers div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .numbers div:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .facts { grid-template-columns: repeat(2, 1fr); }
+  .vids { grid-template-columns: repeat(2, 1fr); }
+  .countries, .contact { grid-template-columns: 1fr; }
+  .formats li { grid-template-columns: 1fr; gap: 2px; }
 }
 @media (max-width: 480px) {
-  .vrow { grid-template-columns: minmax(0, 1fr) 46px; }
-  .vrow .bar { grid-column: 1 / -1; grid-row: 2; }
-  .pass-grid { grid-template-columns: repeat(2, 1fr); }
-  .pass-stub { width: 44px; }
+  header { grid-template-columns: 1fr; }
+  .avatar { width: 88px; height: 88px; }
+  .photos { grid-template-columns: 1fr; grid-template-rows: none; }
+  .photos img, .photos img:first-child { grid-row: auto; aspect-ratio: 16 / 9; }
+  .vids { grid-template-columns: 1fr; }
+  .top a { grid-template-columns: 112px 1fr; }
+  .top img { width: 112px; }
+  .top b { grid-column: 2; font-size: 1rem; }
 }
 </style>
 </head>
 <body>
 
-<header class="hero band">
-  <div class="inner">
+<div class="page">
+
+  <header>
+    <img class="avatar" src="img/avatar.jpg" alt="Maya Yatanska">
     <div>
-      <span class="label">Partnership media kit · November 2026</span>
-      <h1>Maya<br><span>Yatanska</span></h1>
-      <p class="lead">Money, investing and life on the road, in Bulgarian. A new vlog almost every day, filmed wherever we are that week and finished by a team of editors.</p>
-      <div class="chips">
-        <span class="chip">TikTok @mayatanska</span>
-        <span class="chip">YouTube @mayayatanska</span>
-        <span class="chip">23 countries filmed</span>
-        <span class="chip">Next: India, Feb 2027</span>
+      <h1>Maya Yatanska</h1>
+      <p class="sub">Travel and money vlogs in Bulgarian. Media kit, November 2026.</p>
+      <div class="handles">
+        <a href="https://www.youtube.com/@mayayatanska" target="_blank" rel="noopener">YouTube @mayayatanska</a>
+        <a href="https://www.tiktok.com/@mayatanska" target="_blank" rel="noopener">TikTok @mayatanska</a>
       </div>
     </div>
-    <div class="pass" aria-label="Channel summary">
-      <div class="pass-main">
-        <div class="pass-head"><b>BOARDING PASS</b><span class="label">Gate · Partners</span></div>
-        <div class="pass-route">
-          <span class="code">SOF</span><span class="line"></span><span class="code">DEL</span>
-        </div>
-        <div class="pass-grid">
-          <div><span class="label">TikTok</span><span class="v">128K</span></div>
-          <div><span class="label">YouTube</span><span class="v">37.3K</span></div>
-          <div><span class="label">Likes</span><span class="v">1.2M</span></div>
-          <div><span class="label">Avg views</span><span class="v">7.4K</span></div>
-          <div><span class="label">Uploads/5 wks</span><span class="v">30</span></div>
-          <div><span class="label">Countries</span><span class="v">23</span></div>
-        </div>
-      </div>
-      <div class="pass-stub"><span>NON-STOP</span></div>
+  </header>
+
+  <div class="photos">
+    <img src="img/Kr0jo54XQsE.jpg" alt="Life in Rio de Janeiro">
+    <img src="img/TLLeEFmrCbI.jpg" alt="Buenos Aires">
+    <img src="img/utTPO1RHJUc.jpg" alt="Helicopter flight over Iguazú">
+  </div>
+
+  <div class="numbers">
+    <div><b>128K</b><span>TikTok followers</span></div>
+    <div><b>37.3K</b><span>YouTube subscribers</span></div>
+    <div><b>22.4K</b><span>monthly YouTube viewers</span></div>
+    <div><b>30</b><span>videos in the last 5 weeks</span></div>
+  </div>
+
+  <section class="about">
+    <h2>About the channel</h2>
+    <p>Maya makes a daily vlog about money and life on the road. She runs the trading academy Yatanium, so the channel mixes personal finance with travel: what things cost, how she pays, how she invests while moving between countries. She travels and films with Pepi, and a small team of editors cuts every video.</p>
+    <p>They split their time between homes in Spain and Turkey and the road. This autumn it was Mexico, Argentina, Uruguay, Brazil and Paraguay. India is next, in February 2027.</p>
+    <p class="muted small">7.7M lifetime views on YouTube, 371.5K hours watched, 1.2M likes on TikTok.</p>
+  </section>
+
+  <section>
+    <h2>Who watches</h2>
+    <dl class="facts">
+      <div><dt>Largest group</dt><dd>Women, 45–54</dd></div>
+      <div><dt>Returning viewers</dt><dd>73%</dd></div>
+      <div><dt>Language</dt><dd>Bulgarian</dd></div>
+      <div><dt>Found through</dt><dd>68% home feed and subscriptions</dd></div>
+      <div><dt>Average view, latest video</dt><dd>15 min 23 s</dd></div>
+      <div><dt>Thumbnail click rate, latest video</dt><dd>14%</dd></div>
+    </dl>
+    <p class="muted small">YouTube Studio, last 28 days, 14 November 2026.</p>
+  </section>
+
+  <section>
+    <h2>The latest trip</h2>
+    <div class="vids">
+      <a class="vid" href="https://www.youtube.com/watch?v=Kr0jo54XQsE" target="_blank" rel="noopener"><img src="img/Kr0jo54XQsE.jpg" alt="" loading="lazy"><h3>First-person: life in Rio de Janeiro</h3><span class="meta">Brazil · 14K views</span></a>
+      <a class="vid" href="https://www.youtube.com/watch?v=TLLeEFmrCbI" target="_blank" rel="noopener"><img src="img/TLLeEFmrCbI.jpg" alt="" loading="lazy"><h3>Buenos Aires: Latin, European, colourful</h3><span class="meta">Argentina · 12K views</span></a>
+      <a class="vid" href="https://www.youtube.com/watch?v=72Iy4tcqWQc" target="_blank" rel="noopener"><img src="img/72Iy4tcqWQc.jpg" alt="" loading="lazy"><h3>Uruguay surprised us in Montevideo</h3><span class="meta">Uruguay · 8.5K views</span></a>
+      <a class="vid" href="https://www.youtube.com/watch?v=utTPO1RHJUc" target="_blank" rel="noopener"><img src="img/utTPO1RHJUc.jpg" alt="" loading="lazy"><h3>Helicopter flight over Iguazú</h3><span class="meta">Argentina and Brazil · 7.3K views</span></a>
+      <a class="vid" href="https://www.youtube.com/watch?v=JgjVsjN9Plc" target="_blank" rel="noopener"><img src="img/JgjVsjN9Plc.jpg" alt="" loading="lazy"><h3>A day in Petrópolis, the city of kings</h3><span class="meta">Brazil · 6.3K views</span></a>
+      <a class="vid" href="https://www.youtube.com/watch?v=CUnr0jIAOe0" target="_blank" rel="noopener"><img src="img/CUnr0jIAOe0.jpg" alt="" loading="lazy"><h3>We made it to Paraguay too</h3><span class="meta">Paraguay · 5.6K views</span></a>
     </div>
-  </div>
-</header>
+  </section>
 
-<main class="band">
-  <div class="inner">
+  <section>
+    <h2>Most watched</h2>
+    <div class="top">
+      <a href="https://www.youtube.com/watch?v=XAi8Py_GI6E" target="_blank" rel="noopener"><img src="img/XAi8Py_GI6E.jpg" alt="" loading="lazy"><h3>Let's show you the neighbours' house</h3><b>53K</b></a>
+      <a href="https://www.youtube.com/watch?v=4eSGXUCmirQ" target="_blank" rel="noopener"><img src="img/4eSGXUCmirQ.jpg" alt="" loading="lazy"><h3>A trading strategy that earns me more than two average salaries a month</h3><b>53K</b></a>
+      <a href="https://www.youtube.com/watch?v=anRrLQBCsdE" target="_blank" rel="noopener"><img src="img/anRrLQBCsdE.jpg" alt="" loading="lazy"><h3>Our Turkish house: the full tour</h3><b>45K</b></a>
+      <a href="https://www.youtube.com/watch?v=1D2um8IuLMA" target="_blank" rel="noopener"><img src="img/1D2um8IuLMA.jpg" alt="" loading="lazy"><h3>Trading course for beginners, step by step</h3><b>42K</b></a>
+      <a href="https://www.youtube.com/watch?v=JbQZrNkG6jA" target="_blank" rel="noopener"><img src="img/JbQZrNkG6jA.jpg" alt="" loading="lazy"><h3>Full Binance course: earning passive income</h3><b>35K</b></a>
+    </div>
+    <p class="muted small">Public YouTube views on 14 November 2026. Titles translated from Bulgarian.</p>
+  </section>
 
-    <section>
-      <div class="sec-head">
-        <span class="label">Latest trip · autumn 2026</span>
-        <h2>Always on the move</h2>
-        <p>Five countries in Latin America in six weeks, then home to Bulgaria. India is next, in February.</p>
-      </div>
-      <div class="route-card">
-        <svg viewBox="0 0 900 150" role="img" aria-label="Route: Cancún, Buenos Aires, Montevideo, Iguazú, Rio de Janeiro, Paraguay, Bulgaria, then India in February">
-          <line x1="40" y1="70" x2="760" y2="70" stroke="var(--sea)" stroke-width="3" stroke-linecap="round"/>
-          <line x1="760" y1="70" x2="860" y2="70" stroke="var(--accent)" stroke-width="3" stroke-dasharray="6 7" stroke-linecap="round"/>
-          <g fill="var(--paper)" stroke="var(--sea)" stroke-width="3">
-            <circle cx="40" cy="70" r="8"/><circle cx="160" cy="70" r="8"/><circle cx="280" cy="70" r="8"/>
-            <circle cx="400" cy="70" r="8"/><circle cx="520" cy="70" r="8"/><circle cx="640" cy="70" r="8"/><circle cx="760" cy="70" r="8"/>
-          </g>
-          <circle cx="860" cy="70" r="11" fill="var(--accent)"/>
-          <g font-size="17" font-weight="700" fill="var(--ink)" text-anchor="middle">
-            <text x="40" y="42">CUN</text><text x="160" y="42">EZE</text><text x="280" y="42">MVD</text><text x="400" y="42">IGU</text>
-            <text x="520" y="42">GIG</text><text x="640" y="42">ASU</text><text x="760" y="42">SOF</text>
-            <text x="860" y="42" fill="var(--accent)">DEL</text>
-          </g>
-          <g font-size="12" fill="var(--muted)" text-anchor="middle">
-            <text x="40" y="104">Cancún</text><text x="160" y="104">Buenos Aires</text><text x="280" y="104">Montevideo</text><text x="400" y="104">Iguazú</text>
-            <text x="520" y="104">Rio</text><text x="640" y="104">Paraguay</text><text x="760" y="104">Bulgaria</text>
-            <text x="860" y="104" fill="var(--accent)">India</text>
-            <text x="860" y="124" fill="var(--accent)">Feb 2027</text>
-          </g>
-        </svg>
-      </div>
-    </section>
+  <section>
+    <h2>Where they've filmed</h2>
+    <p>23 countries so far.</p>
+    <div class="countries">
+      <p><strong>Europe</strong>Spain, Bulgaria, Italy, France, Switzerland, Russia, Georgia</p>
+      <p><strong>Middle East and Africa</strong>Turkey, UAE, Israel, Jordan, Morocco</p>
+      <p><strong>Asia</strong>Philippines, Indonesia, Thailand, Malaysia, Singapore, Maldives</p>
+      <p><strong>Americas</strong>Mexico, Argentina, Brazil, Uruguay, Paraguay</p>
+    </div>
+  </section>
 
-    <section>
-      <div class="sec-head">
-        <span class="label">Reach</span>
-        <h2>Short clips and long vlogs</h2>
-      </div>
-      <div class="reach">
-        <div class="big lead-stat"><span class="label">TikTok followers</span><span class="v">128K</span><p>534 videos, 1.2M likes</p></div>
-        <div class="big"><span class="label">YouTube subscribers</span><span class="v">37.3K</span><p>7.7M views and 371.5K hours watched</p></div>
-        <div class="big"><span class="label">Top videos</span><span class="v">53K</span><p>Views on the biggest videos. New uploads average 7.4K.</p></div>
-      </div>
-    </section>
+  <section>
+    <h2>Working together</h2>
+    <ul class="formats">
+      <li><strong>In every vlog</strong><span>Your product in shot whenever it's used on camera, with a short on-screen banner and a code. Agreed upfront for a month or more.</span></li>
+      <li><strong>Dedicated segment</strong><span>60 to 90 seconds where Maya uses the product on location and talks about it in her own words.</span></li>
+      <li><strong>Destination series</strong><span>The product across a whole trip, from arrival to departure, plus TikTok clips.</span></li>
+      <li><strong>Affiliate link</strong><span>Your link and code under every travel video.</span></li>
+    </ul>
+    <p class="muted">We mostly work on paid partnerships and are open to affiliate or product deals. Every sponsorship is mentioned in the video and marked as paid promotion on YouTube.</p>
+  </section>
 
-    <section>
-      <div class="sec-head">
-        <span class="label">Where we have filmed</span>
-        <h2>23 countries and counting</h2>
-        <p>Maya and Pepi split their time between homes in Spain and Turkey and the road. Over the past few years the channel has filmed on four continents.</p>
-      </div>
-      <div class="regions">
-        <div class="region">
-          <div class="region-head"><h3>Europe</h3><span class="count">7</span></div>
-          <ul>
-            <li><b>Spain</b><span>Madrid, Barcelona, Salou, Segovia</span></li>
-            <li><b>Bulgaria</b><span>Sofia, Bansko, Borovets</span></li>
-            <li><b>Italy</b><span>Sardinia, Alghero</span></li>
-            <li><b>France</b></li>
-            <li><b>Switzerland</b></li>
-            <li><b>Russia</b><span>Moscow</span></li>
-            <li><b>Georgia</b><span>Batumi</span></li>
-          </ul>
-        </div>
-        <div class="region">
-          <div class="region-head"><h3>Middle East &amp; Africa</h3><span class="count">5</span></div>
-          <ul>
-            <li><b>Turkey</b><span>Antalya, Marmaris, Kaş, Didim, Trabzon, Rize</span></li>
-            <li><b>UAE</b></li>
-            <li><b>Israel</b></li>
-            <li><b>Jordan</b></li>
-            <li><b>Morocco</b></li>
-          </ul>
-        </div>
-        <div class="region">
-          <div class="region-head"><h3>Asia</h3><span class="count">6</span></div>
-          <ul>
-            <li><b>Philippines</b><span>Manila, Cebu, Boracay, El Nido</span></li>
-            <li><b>Indonesia</b><span>Bali, Gili</span></li>
-            <li><b>Thailand</b></li>
-            <li><b>Malaysia</b><span>Kuala Lumpur</span></li>
-            <li><b>Singapore</b></li>
-            <li><b>Maldives</b></li>
-          </ul>
-        </div>
-        <div class="region">
-          <div class="region-head"><h3>Americas</h3><span class="count">5</span></div>
-          <ul>
-            <li><b>Mexico</b><span>Cancún, Isla Mujeres</span></li>
-            <li><b>Argentina</b><span>Buenos Aires, Iguazú</span></li>
-            <li><b>Brazil</b><span>Rio de Janeiro, Petrópolis</span></li>
-            <li><b>Uruguay</b><span>Montevideo</span></li>
-            <li><b>Paraguay</b></li>
-          </ul>
-        </div>
-      </div>
-    </section>
+  <section>
+    <h2>Contact</h2>
+    <div class="contact">
+      <div><span class="muted small">Manager</span><strong>Nicola Petkov</strong><span>n.petkkov@gmail.com</span><span>+359 876 905 059</span></div>
+      <div><span class="muted small">Creator</span><strong>Maya Yatanska</strong><span>mayatanska@gmail.com</span></div>
+    </div>
+  </section>
 
-    <section>
-      <div class="sec-head">
-        <span class="label">Why it works</span>
-        <h2>What a sponsor gets</h2>
-      </div>
-      <div class="why">
-        <div><h3>Real use, on location</h3><p>Products show up where they're actually needed: landing in a new country, paying abroad, getting online.</p></div>
-        <div><h3>A team behind the edit</h3><p>Maya films, and a team of editors cuts and finishes every video, so integrations look clean and on-brand.</p></div>
-        <div><h3>A money-minded audience</h3><p>Viewers come for personal finance and investing as much as travel. They're used to talking about cards, apps and costs.</p></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-head">
-        <span class="label">Most watched · all time</span>
-        <h2>Videos that took off</h2>
-        <p>The biggest videos run to 53K views, and they come from both sides of the channel: life abroad and money.</p>
-      </div>
-      <div class="videos">
-        <a class="vrow" href="https://www.youtube.com/watch?v=XAi8Py_GI6E" target="_blank" rel="noopener"><div class="t"><b>Let's show you the neighbours' house</b><small>Life abroad · 2 months ago</small></div><div class="bar"><i style="width:100%"></i></div><span class="n">53K</span></a>
-        <a class="vrow" href="https://www.youtube.com/watch?v=4eSGXUCmirQ" target="_blank" rel="noopener"><div class="t"><b>A trading strategy that earns me more than two average salaries a month</b><small>Trading · 2 years ago</small></div><div class="bar"><i style="width:100%"></i></div><span class="n">53K</span></a>
-        <a class="vrow" href="https://www.youtube.com/watch?v=anRrLQBCsdE" target="_blank" rel="noopener"><div class="t"><b>Our Turkish house: the full tour</b><small>Life abroad · 5 months ago</small></div><div class="bar"><i style="width:84.9%"></i></div><span class="n">45K</span></a>
-        <a class="vrow" href="https://www.youtube.com/watch?v=1D2um8IuLMA" target="_blank" rel="noopener"><div class="t"><b>Trading course for beginners, step by step</b><small>Trading · 3 years ago</small></div><div class="bar"><i style="width:79.2%"></i></div><span class="n">42K</span></a>
-        <a class="vrow" href="https://www.youtube.com/watch?v=JbQZrNkG6jA" target="_blank" rel="noopener"><div class="t"><b>Full Binance course: earning passive income</b><small>Crypto · 3 years ago</small></div><div class="bar"><i style="width:66%"></i></div><span class="n">35K</span></a>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-head">
-        <span class="label">Most watched · last 5 weeks</span>
-        <h2>On the road right now</h2>
-      </div>
-      <div class="videos">
-        <div class="vrow"><div class="t"><b>First-person: life in Rio de Janeiro</b><small>Brazil</small></div><div class="bar"><i style="width:100%"></i></div><span class="n">14K</span></div>
-        <div class="vrow"><div class="t"><b>Buenos Aires: Latin, European, colourful</b><small>Argentina</small></div><div class="bar"><i style="width:85.7%"></i></div><span class="n">12K</span></div>
-        <div class="vrow"><div class="t"><b>The most famous restaurant in Buenos Aires</b><small>Argentina</small></div><div class="bar"><i style="width:78.6%"></i></div><span class="n">11K</span></div>
-        <div class="vrow"><div class="t"><b>We start… over again!</b><small>Mexico</small></div><div class="bar"><i style="width:71.4%"></i></div><span class="n">10K</span></div>
-        <div class="vrow"><div class="t"><b>Cemeteries, traditions, culture in Mexico</b><small>Mexico</small></div><div class="bar"><i style="width:70.7%"></i></div><span class="n">9.9K</span></div>
-      </div>
-      <p class="note">Public YouTube view counts on 14 November 2026. Titles translated from Bulgarian.</p>
-    </section>
-
-    <section>
-      <div class="sec-head">
-        <span class="label">Audience</span>
-        <h2>Who watches</h2>
-        <p>Bulgarian-speaking adults, mostly women in their late 40s and early 50s. Most of them come back: three in four viewers are casual or regular viewers.</p>
-      </div>
-      <div class="aud">
-        <div><span class="label">Largest group</span><b>Women, 45–54</b></div>
-        <div><span class="label">Monthly audience</span><b>22.4K viewers</b></div>
-        <div><span class="label">Returning viewers</span><b>73%</b><span class="note">33% regular · 40% casual</span></div>
-        <div><span class="label">Language</span><b>Bulgarian</b></div>
-        <div><span class="label">Avg view duration</span><b>15:23</b><span class="note">latest video</span></div>
-        <div><span class="label">Thumbnail CTR</span><b>14%</b><span class="note">latest video</span></div>
-        <div><span class="label">Found via</span><b>68% browse</b><span class="note">home feed and subscriptions</span></div>
-        <div><span class="label">Watch time</span><b>371.5K hours</b><span class="note">lifetime</span></div>
-      </div>
-      <p class="note">YouTube Studio, last 28 days unless marked, 14 November 2026.</p>
-    </section>
-
-    <section>
-      <div class="sec-head">
-        <span class="label">Packages</span>
-        <h2>Ways to work together</h2>
-      </div>
-      <div class="tickets">
-        <div class="ticket"><div class="body"><h3>Dedicated integration</h3><p>Maya uses the product on location and talks about it in her own words. Link and code in the description and pinned comment.</p></div><div class="stub"><b>60–90</b><span>sec · 1 video</span></div></div>
-        <div class="ticket"><div class="body"><h3>Short mention</h3><p>A shorter read early in the video, with link and code in the description.</p></div><div class="stub"><b>30</b><span>sec · 1 video</span></div></div>
-        <div class="ticket"><div class="body"><h3>Destination series</h3><p>The product appears across a whole trip, from arrival to departure, plus TikTok clips.</p></div><div class="stub"><b>3+</b><span>videos</span></div></div>
-        <div class="ticket"><div class="body"><h3>Ongoing partnership</h3><p>Your link under every travel video and regular mentions over several months.</p></div><div class="stub"><b>3–12</b><span>months</span></div></div>
-      </div>
-      <p class="terms">We mainly work on paid partnerships and are open to affiliate or product deals too. Every sponsorship is mentioned in the video and marked as paid promotion on YouTube. Rates on request.</p>
-    </section>
-
-    <section>
-      <div class="sec-head">
-        <span class="label">Contact</span>
-        <h2>Let's talk</h2>
-      </div>
-      <div class="contacts">
-        <div class="person"><span class="label">Manager</span><h3>Nicola Petkov</h3><div class="line"><span>+359 876 905 059</span><span>n.petkkov@gmail.com</span></div></div>
-        <div class="person"><span class="label">Creator</span><h3>Maya Yatanska</h3><div class="line"><span>mayatanska@gmail.com</span></div></div>
-      </div>
-    </section>
-
-  </div>
-</main>
+</div>
 </body>
 </html>
