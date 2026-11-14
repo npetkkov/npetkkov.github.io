@@ -73,7 +73,14 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .hero h1 span { color: #45b4ff; }
 .hero .lead { color: var(--hero-muted); font-size: 1.1rem; max-width: 46ch; margin-top: 18px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-.chip { font-family: var(--mono); font-size: 0.75rem; padding: 6px 10px; border: 1px solid var(--hero-line); border-radius: 999px; color: var(--hero-ink); }
+.chip { font-family: var(--mono); font-size: 0.75rem; padding: 6px 10px; border: 1px solid var(--hero-line); border-radius: 999px; color: var(--hero-ink); display: inline-flex; align-items: center; }
+.chip-btn { font-family: var(--mono); font-weight: 700; font-size: 0.85rem; padding: 9px 18px; border-radius: 999px; background: #45b4ff; color: #12002b; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: background .15s ease, transform .15s ease; }
+.chip-btn:hover { background: #7ccaff; transform: translateY(-1px); }
+.chip-btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+.chip-btn.alt { background: transparent; color: var(--hero-ink); border: 1px solid #45b4ff; }
+.chip-btn.alt:hover { background: rgba(69,180,255,.15); }
+@media (prefers-reduced-motion: reduce) { .chip-btn { transition: none; } .chip-btn:hover { transform: none; } }
+
 
 /* Boarding pass */
 .pass { background: var(--paper); color: var(--ink); border-radius: 16px; display: grid; grid-template-columns: 1fr auto; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); min-width: 0; }
@@ -195,8 +202,8 @@ a.vrow:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; bo
       <h1>Maya<br><span>Yatanska</span></h1>
       <p class="lead">Money, investing and life on the road, in Bulgarian. A new vlog almost every day, filmed wherever we are that week and finished by a team of editors.</p>
       <div class="chips">
-        <span class="chip">TikTok @mayatanska</span>
-        <span class="chip">YouTube @mayayatanska</span>
+        <a class="chip-btn" href="https://www.tiktok.com/@mayatanska" target="_blank" rel="noopener">TikTok @mayatanska ↗</a>
+        <a class="chip-btn" href="https://www.youtube.com/@mayayatanska" target="_blank" rel="noopener">YouTube @mayayatanska ↗</a>
         <span class="chip">23 countries filmed</span>
         <span class="chip">Next: India, Feb 2027</span>
       </div>
