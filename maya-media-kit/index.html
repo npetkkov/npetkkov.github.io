@@ -192,6 +192,13 @@ a.vrow:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; bo
   .pass-grid { grid-template-columns: repeat(2, 1fr); }
   .pass-stub { width: 44px; }
 }
+
+@media print {
+  @page { size: 1120px 1584px; margin: 0; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  section, .region, .big, .ticket, .videos, .person, .route-card, .why > div { break-inside: avoid; }
+  .chip-btn { transform: none !important; }
+}
 </style>
 </head>
 <body>
