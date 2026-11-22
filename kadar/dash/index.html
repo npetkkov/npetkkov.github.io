@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <title>Kadar Beta — табло</title>
+  <link rel="stylesheet" href="/kadar/kadar.css">
+</head>
+<body class="k-dash-body">
+  <header class="k-top">
+    <div class="k-brand">
+      <span class="k-mark" aria-hidden="true"><svg viewBox="0 0 30 30"><path d="M9 9v12M13 15l8-6v12z"/></svg></span>
+      <span class="k-name">Kadar</span><span class="k-beta">BETA</span>
+    </div>
+    <div class="k-top-r">
+      <span id="updated" class="k-muted"></span>
+      <button id="logout" class="k-btn-ghost" type="button">Изход</button>
+    </div>
+  </header>
+
+  <main class="k-dash" id="app" hidden>
+    <section class="k-hero">
+      <h1>Табло на бета теста</h1>
+      <p id="lead" class="k-lead"></p>
+    </section>
+
+    <section class="k-kpis">
+      <article class="k-card k-kpi k-kpi-online"><div class="k-kpi-l"><span class="k-dot on"></span>Онлайн сега</div><div class="k-kpi-n" id="kOnline">0</div><div class="k-kpi-s" id="kOnlineS"></div></article>
+      <article class="k-card k-kpi"><div class="k-kpi-l">Тестъри</div><div class="k-kpi-n" id="kTesters">0</div><div class="k-kpi-s" id="kTestersS"></div></article>
+      <article class="k-card k-kpi"><div class="k-kpi-l">Отчети</div><div class="k-kpi-n" id="kReports">0</div><div class="k-kpi-s" id="kReportsS"></div></article>
+      <article class="k-card k-kpi"><div class="k-kpi-l">Проблемни редове</div><div class="k-kpi-n k-bad" id="kRed">0</div><svg class="k-spark" id="kSpark" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"></svg></article>
+    </section>
+
+    <section class="k-grid2">
+      <article class="k-card" id="online">
+        <div class="k-card-h"><h2>Кой е с Kadar</h2><span class="k-chip" id="onlineChip"></span></div>
+        <ul class="k-online" id="onlineList"></ul>
+      </article>
+      <article class="k-card" id="cats">
+        <div class="k-card-h"><h2>Проблеми по вид</h2></div>
+        <div class="k-donut-wrap"><svg id="donut" viewBox="0 0 200 200" role="img" aria-label="Проблеми по вид"></svg><ul class="k-legend" id="legend"></ul></div>
+      </article>
+    </section>
+
+    <article class="k-card" id="days">
+      <div class="k-card-h"><h2>Активност по дни</h2><span class="k-legend-inline"><i class="sw bad"></i>проблеми <i class="sw warn"></i>предупреждения</span></div>
+      <div class="k-chart" id="dayChart"></div>
+    </article>
+
+    <article class="k-card" id="problems">
+      <div class="k-card-h"><h2>Най-чести проблеми</h2><span class="k-muted k-small">числата в текста са заменени с #</span></div>
+      <ol class="k-bars" id="probBars"></ol>
+    </article>
+
+    <section class="k-grid2">
+      <article class="k-card" id="testers">
+        <div class="k-card-h"><h2>Тестъри</h2></div>
+        <div class="k-scroll"><table class="k-table"><thead><tr><th>Тестър</th><th>Версия</th><th class="n">Отчети</th><th>Проблеми</th><th>Последно</th></tr></thead><tbody id="testerRows"></tbody></table></div>
+      </article>
+      <article class="k-card" id="versions">
+        <div class="k-card-h"><h2>Версии</h2></div>
+        <ol class="k-bars k-bars-sm" id="verBars"></ol>
+        <div class="k-card-h k-mt"><h2>Игри с резервно заснемане</h2></div>
+        <ul class="k-games" id="gameList"></ul>
+      </article>
+    </section>
+
+    <article class="k-card" id="reports">
+      <div class="k-card-h"><h2>Отчети</h2><span class="k-muted k-small">дневни и ръчни доклади от #kadar-beta-logs</span></div>
+      <div class="k-scroll"><table class="k-table"><thead><tr><th>Кога</th><th>Тестър</th><th>Версия</th><th>Вид</th><th class="n">Проблеми</th><th class="n">Предупр.</th><th>Описание</th></tr></thead><tbody id="reportRows"></tbody></table></div>
+    </article>
+
+    <p class="k-fine">Данните се обновяват при всеки анализ на логовете. Сесията изтича при затваряне на раздела или след 8 часа.</p>
+  </main>
+  <div class="k-tip" id="tip" hidden></div>
+  <script src="/kadar/auth.js"></script>
+  <script src="/kadar/dash.js"></script>
+</body>
+</html>

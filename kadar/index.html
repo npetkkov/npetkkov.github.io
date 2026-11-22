@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <title>Kadar Beta — вход</title>
+  <link rel="stylesheet" href="/kadar/kadar.css">
+</head>
+<body class="k-login-body">
+  <main class="k-login">
+    <div class="k-brand">
+      <span class="k-mark" aria-hidden="true"><svg viewBox="0 0 30 30"><path d="M9 9v12M13 15l8-6v12z"/></svg></span>
+      <span class="k-name">Kadar</span><span class="k-beta">BETA</span>
+    </div>
+    <h1>Табло на бета теста</h1>
+    <p class="k-muted">Само за администратори.</p>
+    <form id="login" class="k-form" autocomplete="on" novalidate>
+      <label for="user">Потребител</label>
+      <input id="user" name="username" autocomplete="username" autocapitalize="off" spellcheck="false" required>
+      <label for="pass">Парола</label>
+      <input id="pass" name="password" type="password" autocomplete="current-password" required>
+      <button id="go" type="submit" class="k-btn">Вход</button>
+      <p id="msg" class="k-msg" role="alert" aria-live="polite"></p>
+    </form>
+    <p class="k-fine">Данните са криптирани (AES-256) и се разшифроват само в браузъра ти след вход.</p>
+  </main>
+  <script src="/kadar/auth.js"></script>
+  <script src="/kadar/login.js"></script>
+</body>
+</html>
