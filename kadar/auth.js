@@ -1,6 +1,3 @@
-// Kadar Beta — вход и разшифроване (всичко става в браузъра).
-// data.enc.json е AES-256-GCM шифрован текст. Ключът се изчислява от потребителско име + парола с
-// PBKDF2-SHA256 (600 000 итерации). Без тях файлът е безполезен — в сайта и в GitHub няма нищо четимо.
 'use strict';
 const KadarAuth = (() => {
   const SKEY = 'kadar.k', SEXP = 'kadar.exp';
@@ -26,7 +23,6 @@ const KadarAuth = (() => {
     return JSON.parse(new TextDecoder().decode(pt));
   }
 
-  /** Вход: true при правилни данни (ключът остава само в този раздел до затварянето му, най-много 8 ч). */
   async function login(user, pass) {
     const blob = await fetchBlob();
     const raw = await deriveKey(user, pass, blob);
@@ -38,7 +34,6 @@ const KadarAuth = (() => {
     return true;
   }
 
-  /** Данните за таблото или null (няма вход / изтекъл / сменен ключ). */
   async function load() {
     let k = null, exp = 0;
     try { k = sessionStorage.getItem(SKEY); exp = +sessionStorage.getItem(SEXP) || 0; } catch { /* */ }

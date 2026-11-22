@@ -1,8 +1,8 @@
 'use strict';
 (() => {
   const form = document.getElementById('login'), msg = document.getElementById('msg'), btn = document.getElementById('go');
-  const LOCK = 'kadar.lock';
-  // Забавяне след грешни опити (самото криптиране е истинската защита — това само спира натискането подред)
+  const LOCK = 'kadar.lock2';
+  // Забавяне след грешни опити
   function lockedFor() {
     try { const l = JSON.parse(localStorage.getItem(LOCK) || '{}'); return Math.max(0, (l.until || 0) - Date.now()); } catch { return 0; }
   }
@@ -18,7 +18,8 @@
     e.preventDefault();
     const wait = lockedFor();
     if (wait > 0) { msg.textContent = `Твърде много опити. Опитай след ${Math.ceil(wait / 1000)} s.`; return; }
-    const user = document.getElementById('user').value.trim(), pass = document.getElementById('pass').value;
+    // Интервали/нови редове при копиране и главни букви в името (телефон) не бива да провалят входа
+    const user = document.getElementById('user').value.trim().toLowerCase(), pass = document.getElementById('pass').value.trim().normalize('NFC');
     if (!user || !pass) { msg.textContent = 'Попълни потребител и парола.'; return; }
     btn.disabled = true; msg.textContent = 'Проверява…';
     const t0 = Date.now();
