@@ -14,6 +14,22 @@
       localStorage.setItem(LOCK, JSON.stringify(l));
     } catch { /* */ }
   }
+  // Покажи паролата + предупреждения за Caps Lock и кирилица (най-честите причини за „грешна парола“)
+  const pass = document.getElementById('pass'), user = document.getElementById('user'), eye = document.getElementById('eye'), warn = document.getElementById('warn');
+  let caps = false;
+  eye.addEventListener('click', () => {
+    const show = pass.type === 'password';
+    pass.type = show ? 'text' : 'password';
+    eye.textContent = show ? 'Скрий' : 'Покажи';
+    eye.setAttribute('aria-pressed', String(show));
+  });
+  function check(e) {
+    if (e && e.getModifierState) caps = e.getModifierState('CapsLock');
+    const cyr = /[Ѐ-ӿ]/.test(user.value + pass.value);
+    const w = [caps ? 'Caps Lock е включен.' : '', cyr ? 'Има букви на кирилица — превключи клавиатурата на латиница.' : ''].filter(Boolean).join(' ');
+    warn.textContent = w; warn.hidden = !w;
+  }
+  for (const el of [user, pass]) { el.addEventListener('keyup', check); el.addEventListener('keydown', check); el.addEventListener('input', () => check()); }
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const wait = lockedFor();

@@ -21,7 +21,11 @@
       <label for="user">Потребител</label>
       <input id="user" name="username" autocomplete="username" autocapitalize="off" spellcheck="false" required>
       <label for="pass">Парола</label>
-      <input id="pass" name="password" type="password" autocomplete="current-password" required>
+      <div class="k-pass">
+        <input id="pass" name="password" type="password" autocomplete="current-password" required>
+        <button id="eye" type="button" class="k-eye" aria-label="Покажи паролата" aria-pressed="false">Покажи</button>
+      </div>
+      <p id="warn" class="k-warn" hidden></p>
       <button id="go" type="submit" class="k-btn">Вход</button>
       <p id="msg" class="k-msg" role="alert" aria-live="polite"></p>
     </form>

@@ -44,6 +44,11 @@ button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); ou
 .k-btn:hover { filter: brightness(1.08); }
 .k-btn:active { transform: translateY(1px); }
 .k-btn:disabled { opacity: .6; cursor: wait; }
+.k-pass { position: relative; display: flex; }
+.k-pass input { flex: 1; padding-right: 84px; }
+.k-eye { position: absolute; right: 6px; top: 6px; height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface-2); color: var(--muted); font: 500 .8rem var(--font); cursor: pointer; }
+.k-eye:hover { color: var(--text); }
+.k-warn { margin: 6px 0 0; color: var(--warn); font-size: .85rem; }
 .k-msg { min-height: 1.3em; margin: 10px 0 0; color: var(--bad); font-size: .9rem; }
 .k-fine { color: var(--faint); font-size: .78rem; margin: 18px 0 0; }
 
