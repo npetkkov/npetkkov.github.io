@@ -30,9 +30,9 @@ body {
   font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased; overflow-x: clip;
 }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; } /* height:auto — иначе width/height атрибутите сплескват снимката */
 a { color: inherit; }
-.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
 /* Горе: само името (без меню — страницата е една) */
 .top { display: flex; align-items: center; gap: 12px; padding: 22px 0; }
@@ -43,7 +43,7 @@ a { color: inherit; }
   color: #B9A8FF; background: #2B1F5A; border: 1px solid #7C5CFF; }
 
 /* Hero */
-.hero { position: relative; padding: 56px 0 40px; display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+.hero { position: relative; padding: 56px 0 40px; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; }
 .hero::before { content: ""; position: absolute; inset: -40px -20vw auto auto; width: 620px; height: 620px; pointer-events: none;
   background: radial-gradient(closest-side, rgba(255,122,69,0.22), transparent 70%); filter: blur(10px); z-index: -1; }
 h1 { font-size: clamp(38px, 5.4vw, 60px); line-height: 1.05; letter-spacing: -0.035em; margin: 0 0 18px; font-weight: 800; }
