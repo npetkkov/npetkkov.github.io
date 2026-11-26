@@ -115,7 +115,7 @@ footer a { color: var(--muted); }
     <div>
       <h1>Хвана ли го? <em>Kadar го е хванал.</em></h1>
       <p class="lead">Kadar записва тихо последните минути от играта ти. Стане ли нещо яко, натискаш <kbd>Alt+S</kbd> и клипът е готов — със звука на играта, Discord и микрофона на отделни писти.</p>
-      <a class="dl" id="dl" href="https://github.com/npetkkov/kadar-releases/releases/latest/download/Kadar.zip">
+      <a class="dl" id="dl" href="https://github.com/npetkkov/kadar-releases/releases/latest/download/KadarSetup.exe">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
         Изтегли Kadar
       </a>
@@ -146,11 +146,11 @@ footer a { color: var(--muted); }
 
   <section>
     <h2>Инсталиране</h2>
-    <p class="sub">Около минута. Kadar се обновява сам, щом излезе нова версия.</p>
+    <p class="sub">Под минута. Kadar се обновява сам, щом излезе нова версия, а се маха от „Apps“ в Windows като всяка програма.</p>
     <div class="steps">
-      <div class="step"><h3>Изтегли</h3><p>Бутона горе — сваля се <b>Kadar.zip</b> (последната версия).</p></div>
-      <div class="step"><h3>Разархивирай</h3><p>Десен клик → „Extract All…“. Вътре е папка <b>Kadar</b> — сложи я някъде, където няма да я триеш.</p></div>
-      <div class="step"><h3>Пусни Kadar.exe</h3><p>Записът тръгва веднага. <kbd>Alt+S</kbd> запазва клип, а клиповете са в Videos\Kadar.</p></div>
+      <div class="step"><h3>Изтегли</h3><p>Бутона горе — сваля се <b>KadarSetup.exe</b> (последната версия).</p></div>
+      <div class="step"><h3>Инсталирай</h3><p>Пусни го и натисни „Напред“ → „Инсталирай“. Не иска администраторски права; слага Kadar в Start и на работния плот.</p></div>
+      <div class="step"><h3>Готово</h3><p>Kadar тръгва и записва веднага. <kbd>Alt+S</kbd> запазва клип, а клиповете са в Videos\Kadar.</p></div>
     </div>
     <div class="note"><b>Windows може да каже „Windows protected your PC“.</b> Това е, защото Kadar е нов и още не е подписан. Натисни <b>More info → Run anyway</b> — нужно е само първия път.</div>
   </section>
@@ -176,7 +176,7 @@ footer a { color: var(--muted); }
     if (!r.ok) return;
     const rel = await r.json();
     const v = (rel.tag_name || '').replace(/^v/, '');
-    const zip = (rel.assets || []).find((a) => a.name === 'Kadar.zip');
+    const zip = (rel.assets || []).find((a) => a.name === 'KadarSetup.exe') || (rel.assets || []).find((a) => a.name === 'Kadar.zip');
     const d = rel.published_at ? new Date(rel.published_at) : null;
     const date = d ? d.toLocaleDateString('bg-BG', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
     const meta = document.getElementById('meta');
